@@ -84,10 +84,3 @@ cd mcp_lecture_project\project1_stock_counselor
 上证指数最近怎么样
 我想转人工
 ```
-
-## 面试时可以重点讲
-
-- 为什么把行情分析、回复策略和转人工拆成不同 MCP Server。
-- 如何通过 Function Calling 抽取股票标的、用户情绪和工具参数。
-- 如何避免大模型直接给出不合规的投资建议。
-- 极端情绪和接口异常场景下如何做兜底。
