@@ -1,7 +1,5 @@
 # 多 MCP 协同智能体金融助理项目
 
-本项目是“从 0-1 打造多 MCP 协同智能体系统实战”的课程代码整理版，包含两个演示项目：
-
 - `project1_stock_counselor`：手写 MCP Client 同时连接多个 SSE MCP Server。
 - `project2_Agent_SDK+MCP_materials`：使用 OpenAI Agents SDK 编排多智能体，并通过 MCP Server 调用金融工具。
 
@@ -152,4 +150,3 @@ git push -u origin main
 - 如果模型调用失败，先检查 `API_KEY`、`DEEPSEEK_API_KEY`、`APP_API_KEY` 和 `APP_ID`。
 - 如果端口被占用，请先关闭旧进程或修改对应服务文件中的端口。
 - `finance_consult_mcp_server.py` 使用 ChromaDB，本地知识库数据会写入 `db_data/`，该目录不会提交。
-
