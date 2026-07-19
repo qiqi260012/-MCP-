@@ -1,9 +1,13 @@
 # 多 MCP 协同智能体金融助理项目
 
-- `project1_stock_counselor`：手写 MCP Client 同时连接多个 SSE MCP Server。
-- `project2_Agent_SDK+MCP_materials`：使用 OpenAI Agents SDK 编排多智能体，并通过 MCP Server 调用金融工具。
+这是一个围绕金融服务场景搭建的多智能体应用。我把股票查询预测、金融政策咨询、文章风控审查和转人工服务拆成多个 MCP 工具服务，再用智能体负责理解用户意图、选择工具和完成业务转接。
 
-推荐优先运行 `project2_Agent_SDK+MCP_materials`，它包含 FastAPI 接口和 Gradio 前端。
+项目里保留了两套实现：
+
+- 基础版：手写 MCP Client，同时连接多个 SSE MCP Server，便于理解 MCP 工具聚合流程。
+- 完整应用版：基于 OpenAI Agents SDK 编排多个业务智能体，并提供 FastAPI 接口和 Gradio 页面。
+
+本地体验建议直接运行完整应用版，对应目录是 `mcp_lecture_project/project2_Agent_SDK+MCP_materials`。
 
 ## 功能
 
@@ -22,7 +26,7 @@
 - Python 3.13 或更高版本
 - PowerShell
 
-本仓库已经提供 `requirements.txt`，并推荐使用项目内虚拟环境 `.venv`。
+依赖统一放在 `requirements.txt` 里，推荐使用项目内虚拟环境 `.venv`，避免影响电脑上的其他 Python 项目。
 
 ## 本地运行
 
@@ -42,7 +46,7 @@ python -m venv .venv
 
 项目运行目录中已经提供 `.env.example`，本地实际运行使用 `.env`。
 
-项目 2 的 `.env` 路径：
+完整应用版的 `.env` 路径：
 
 ```text
 mcp_lecture_project/project2_Agent_SDK+MCP_materials/.env
@@ -67,7 +71,7 @@ APP_ID=
 
 `.env` 已被 `.gitignore` 忽略，不会提交到 GitHub。
 
-### 4. 启动项目 2
+### 4. 启动完整应用版
 
 ```powershell
 .\scripts\start_project2.ps1
@@ -93,7 +97,7 @@ Invoke-RestMethod `
   -Body $body
 ```
 
-### 5. 启动项目 1
+### 5. 启动基础版
 
 ```powershell
 .\scripts\start_project1.ps1
@@ -108,7 +112,7 @@ cd mcp_lecture_project\project1_stock_counselor
 
 ## 主要端口
 
-项目 2：
+完整应用版：
 
 - `8335`：转人工 MCP Server
 - `8336`：股票预测 MCP Server
@@ -117,7 +121,7 @@ cd mcp_lecture_project\project1_stock_counselor
 - `9998`：FastAPI 服务
 - `9996`：Gradio 前端
 
-项目 1：
+基础版：
 
 - `7335`：转人工 MCP Server
 - `7336`：股票 MCP Server
